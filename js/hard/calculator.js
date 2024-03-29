@@ -21,25 +21,33 @@ class Calculator {
     this.result = 0;
   }
   add(num) {
-    return this.result = this.result + num;
+    this.result = this.result + num;
   }
   subtract(num) {
-    return this.result = this.result - num;
+    this.result = this.result - num;
   }
   multiply(num) {
-    return this.result = this.result * num;
+    this.result = this.result * num;
   }
   divide(num) {
     if (num === 0) {
       throw new Error("can't divide by zero")
     }
-    return this.result = this.result / num;
+    this.result = this.result / num;
   }
   clear() {
-    return this.result = 0;
+    this.result = 0;
   }
   getResult() {
     return this.result;
+  }
+  calculate(exp){
+    let res = eval(exp);
+    if(res == Infinity || res == -Infinity){
+      throw new Error("can't divide by");
+      return;
+    }
+    this.result = res;
   }
 }
 let calc = new Calculator();
